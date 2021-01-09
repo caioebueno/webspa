@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Dev {
+  id         Int     @id @default(autoincrement())
+  name       String
+  email      String
+  Age        Int
+  linkedin   String
+  csharp     Boolean
+  javascript Boolean
+  node       Boolean
+  angular    Boolean
+  react      Boolean
+  ionic      Boolean
+  mensageria Boolean
+  php        Boolean
+  lavarel    Boolean
+}
+
+model Recruiter {
+  id       Int    @id @default(autoincrement())
+  email    String
+  password String
+}
